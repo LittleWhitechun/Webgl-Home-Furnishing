@@ -1,0 +1,40 @@
+{
+  "filetype": "pagedata",
+  "operation": "door-texture",
+  "content": {
+    "title": "更换门的样式",
+    "directory": "images/door/",
+    "items": [
+      {
+        "chsname": "门样式 1",
+        "typename": "texture",
+        "filename": "door1.JPG"
+      },
+      {
+        "chsname": "门样式 2",
+        "typename": "texture",
+        "filename": "door2.JPG"
+      },
+      {
+        "chsname": "门样式 3",
+        "typename": "texture",
+        "filename": "door3.JPG"
+      },
+      {
+        "chsname": "门样式 4",
+        "typename": "texture",
+        "filename": "door4.JPG"
+      },
+      {
+        "chsname": "门样式 5",
+        "typename": "texture",
+        "filename": "door5.JPG"
+      },
+      {
+        "chsname": "门样式 6",
+        "typename": "texture",
+        "filename": "door6.JPG"
+      }
+    ]
+  }
+}
