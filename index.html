@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Design Index</title>
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/buttons.css">
+	<style type="text/css">
+		body{
+			background-image:url(index_img.jpg);
+			background-size:cover;
+		}
+
+		#writer{
+			position: absolute;
+			margin-left:75%;
+			bottom: 35px;
+		}
+	</style>
+	
+	<script>
+	var fade=function(){
+		$("#btn1").fadeIn(1000);
+		$("#btn2").fadeIn(1000);
+	};
+	</script>
+</head>
+<body onload="fade()">
+	<div class="container" >
+		<div class="page-header">
+			<h1  id="title1" style="color:#cc6633;font-size:50px;margin-top:15%;margin-left:20%;font-family:Impact">3D Design</h1>
+		</div>
+		
+		<a href="planedesign.html" id="btn1" class="button button-3d button-action button-pill" style="margin-left:20%;display:none">进入平面设计界面</a>
+		<br>
+		<br>
+		<br>
+		<a href="#" id="btn2" class="button button-3d button-primary button-pill" style="margin-left:20%;display:none" data-toggle="modal" data-target="#myModal">帮助</a>
+		
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">
+							使用帮助
+						</h4>
+					</div>
+					<div class="modal-body">
+						点击“进入平面设计界面”可开始设计<br><br>
+						本网站可使您先通过平面设计进行户型的大体操作，然后进入3D设计界面进行3D视角的观察以及家具、纹理的设计<br><br>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+	<img src="writer.png" id="writer">
+</body>
+</html>
+
+
+
+
+
+

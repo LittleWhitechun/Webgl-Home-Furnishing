@@ -1,0 +1,20 @@
+{
+  "filetype": "pagedata",
+  "operation": "light-add",
+  "content": {
+    "title": "添加室内光源",
+    "instruction": "点选下面列表中的光源类型，在场景中寻找一个平面作为支撑面，在确定的位置点击鼠标左键即可完成添加。",
+    "items": [
+      {
+        "chsname": "向上的灯光",
+        "typename": "spotlight-upward",
+        "supportingface": "Floor"
+      },
+      {
+        "chsname": "向下的灯光",
+        "typename": "spotlight-downward",
+        "supportingface": "Ceiling"
+      }
+    ]
+  }
+}

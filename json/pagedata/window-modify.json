@@ -1,0 +1,59 @@
+{
+  "filetype": "pagedata",
+  "operation": "set-parameter",
+  "content": {
+    "title": "设置窗户的属性",
+    "instruction": "设置窗户表面的颜色：调节下列红绿蓝三个参数，混合得到的颜色将会立即应用到选择的那块窗户上。",
+    "items": [
+      {
+        "chsname": "更改窗户类型",
+        "typename": "button",
+        "callback": "loadUpdatePlaneByTexture('window')"
+      },
+      {
+        "chsname": "窗户的宽度",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": 1,
+        "max": 80,
+        "step": 0.2,
+        "precision": 1,
+        "varible": "SELECTED_FOR_SETTING.spwidth",
+        "callback": "resetSurfacePlane()"
+      },
+      {
+        "chsname": "窗户表面 - 红色成分",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "precision": 0,
+        "varible": "SELECTED_FOR_SETTING.hexColor.r",
+        "callback": "updatePlaneByColor()"
+      },
+      {
+        "chsname": "窗户表面 - 绿色成分",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "precision": 0,
+        "varible": "SELECTED_FOR_SETTING.hexColor.g",
+        "callback": "updatePlaneByColor()"
+      },
+      {
+        "chsname": "窗户表面 - 蓝色成分",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "precision": 0,
+        "varible": "SELECTED_FOR_SETTING.hexColor.b",
+        "callback": "updatePlaneByColor()"
+      }
+    ]
+  }
+}

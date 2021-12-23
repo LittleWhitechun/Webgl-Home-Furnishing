@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一个小房间</title>
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    <script>
+        /*AFRAME 的大致结构：<a-scene> 是最外层的标签。
+        <a-scnen>可以有（唯一）一个子标签<a-assets>用来存放各种模型和图片的来源，例如url地址，都可以直接在<a-scene>里引用。
+        <a-entity>是最常用的子标签，代表一个实体，可以自定义。*/
+
+        var SCALE=0.05;
+
+        var scene = document.createElement('a-scene');//全局变量
+        var asset = document.createElement('a-assets');//全局变量
+        var camera= document.createElement('a-camera');
+        var ground = document.createElement('a-cylinder');
+        var sky=document.createElement('a-sky');
+        sky.setAttribute('src','https://cdn.aframe.io/a-painter/images/sky.jpg');
+
+        camera.setAttribute('position','10 0.5 10');
+
+
+        var WALL_COLOR="#1a45aa";
+        var WALL_WIDTH=0.1;
+        var WALL_HEIGHT=15;
+
+        var WINDOW_WIDTH=0.12;
+        var WINDOW_DEPTH=2.5;
+        var WINDOW_HEIGHT=3;
+
+        var SURFACEPLANE_DEPTH=3.5;
+        var SURFACEPLANE_HEIGHT=2.5;
+
+
+        var DOOR_WIDTH=0.12;
+        var DOOR_DEPTH=2.5;
+        var DOOR_HEIGHT=4;
+
+
+
+        //添加obj模型，模型先上传到https://glitch.com/edit/TODO：模型的比例问题需要具体调整，直接用会太大
+        function addModel(obj_id, mtl_id, obj_src, mtl_src,position) {
+            var entity = document.createElement('a-entity');
+            var scale = '0.002 0.002 0.002';//调整三个维度上的比例
+//            var position = '0 0.5 0';
+
+
+            var obj_item = document.createElement('a-assets-item');
+            var mtl_item = document.createElement('a-assets-item');
+            obj_item.setAttribute('id', obj_id);
+            obj_item.setAttribute('src', obj_src);
+            mtl_item.setAttribute('id', mtl_id);
+            mtl_item.setAttribute('src', mtl_src);
+            asset.appendChild(obj_item);
+            asset.appendChild(mtl_item);
+
+            entity.setAttribute('obj-model', 'obj: #' + obj_id + '; mtl: #' + mtl_id);
+            entity.setAttribute('scale', scale);
+            entity.setAttribute('position', position);
+
+            scene.appendChild(entity);
+        }
+
+
+        /*         创建一个墙壁 TODO：如何按照所给的平面设计图来绘制墙壁、如何在墙上开门和窗、如何在墙上悬挂挂饰
+         *         墙的属性：长宽高、角度、材质、颜色。材质src放在a-assets标签里
+         *         rotation:x是竖直旋转，y是水平旋转，z是左右旋转
+         *         position：坐标
+         *         通过二维坐标来绘制墙面
+         */
+        function createWall(x1,y1,x2,y2,url) {
+
+            var position=(x1+x2)/2 +' 0.5 '+(y1+y2)/2; //取中心点
+            var depth=Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)); //勾股定理求得墙的长度
+            var rotation='0 '+Math.atan((x1-x2)/(y1-y2))/Math.PI*180+' 0'; //计算墙的角度
+
+
+
+            var wall = document.createElement('a-box');
+//            wall.setAttribute('color', WALL_COLOR);
+            wall.setAttribute('width', WALL_WIDTH);
+            wall.setAttribute('depth', depth);
+            wall.setAttribute('height',WALL_HEIGHT );
+            wall.setAttribute('position', position);
+            wall.setAttribute('rotation', rotation);
+            wall.setAttribute('src',url);
+
+            scene.appendChild(wall);
+console.log('墙的壁纸'+url);
+
+        }
+
+        function createDoor(x1,y1,x2,y2,url) {
+
+            var position=(x1+x2)/2 +' 2.53 '+(y1+y2)/2; //取中心点
+            var depth=Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)); //勾股定理求得门的长度
+            var rotation='0 '+Math.atan((x1-x2)/(y1-y2))/Math.PI*180+' 0'; //计算门的角度
+
+
+
+            var door = document.createElement('a-box');
+            door.setAttribute('width', DOOR_WIDTH);
+            door.setAttribute('depth', DOOR_DEPTH);
+            door.setAttribute('height',DOOR_HEIGHT );
+            door.setAttribute('position', position);
+            door.setAttribute('rotation', rotation);
+            door.setAttribute('src',url);
+
+            scene.appendChild(door);
+
+
+        }
+
+
+        function createWindow(x1,y1,x2,y2,url) {
+
+            var position=(x1+x2)/2 +' 4 '+(y1+y2)/2; //取中心点
+            var depth=Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)); //勾股定理求得窗的长度
+            var rotation='0 '+Math.atan((x1-x2)/(y1-y2))/Math.PI*180+' 0'; //计算窗的角度
+            var wind=document.createElement('a-box');
+
+            wind.setAttribute('width',WINDOW_WIDTH);
+            wind.setAttribute('depth',WINDOW_DEPTH);
+            wind.setAttribute('height',WINDOW_HEIGHT);
+            wind.setAttribute('position',position);
+            wind.setAttribute('rotation',rotation);
+            wind.setAttribute('src',url);
+
+            scene.appendChild(wind);
+        }
+
+        function createSurfaceplane(x1,y1,x2,y2,x3,y3,url,height) {
+
+            var position=x3 +' '+height+' '+y3; //取中心点
+            var depth=Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)); //勾股定理求得窗的长度
+            var rotation='0 '+Math.atan((x1-x2)/(y1-y2))/Math.PI*180+' 0'; //计算窗的角度
+            var wind=document.createElement('a-box');
+
+            wind.setAttribute('width',WINDOW_WIDTH);
+            wind.setAttribute('depth',SURFACEPLANE_DEPTH);
+            wind.setAttribute('height',SURFACEPLANE_HEIGHT);
+            wind.setAttribute('position',position);
+            wind.setAttribute('rotation',rotation);
+            wind.setAttribute('src',url);
+
+            scene.appendChild(wind);
+        }
+
+
+
+
+
+
+
+        function addAllModel() {
+            for(var i=0;i<sessionStorage.length;i++){
+                var mykey=sessionStorage.key(i);
+                var temp=sessionStorage.getItem(mykey);
+                var obj=JSON.parse(temp);
+                console.log("第二次vr测试&&&&&&&&");
+                console.log(temp);
+                console.log(obj.type+" "+obj.position);
+
+                switch (obj.type){
+                    case 'surfaceplane':
+                        createSurfaceplane(obj.x1*SCALE,obj.y1*SCALE,obj.x2*SCALE,obj.y2*SCALE,obj.x3*SCALE,obj.y3*SCALE,obj.src,obj.height*SCALE+1.8);
+                        break;
+
+                    case 'floor':
+                        ground.setAttribute('src',obj.src);
+                        break;
+
+                    case 'Window':
+                        createWindow(obj.x1*SCALE,obj.y1*SCALE,obj.x2*SCALE,obj.y2*SCALE,obj.src);
+                        console.log('新窗！！！！');
+                        break;
+                    case 'Door':
+                        createDoor(obj.x1*SCALE,obj.y1*SCALE,obj.x2*SCALE,obj.y2*SCALE,obj.src);
+                        console.log('新门！！！！');
+                        break;
+                    case 'wall':
+                        createWall(obj.x1*SCALE,obj.y1*SCALE,obj.x2*SCALE,obj.y2*SCALE,obj.src);
+                        console.log('这是新墙!!!!!!!!!');
+                        break;
+                    case 'desk':
+                        addModel('desk-obj','desk-mtl','obj-modules/desk/desk.obj','obj-modules/desk/desk.mtl',obj.position);
+                        console.log('desk success');
+                        break;
+                    case 'sofa':
+                        addModel('sofa-obj','sofa-mtl','obj-modules/sofa/sofa.obj','obj-modules/sofa/sofa.mtl',obj.position);
+                        console.log('sofa success');
+                        break;
+                    case 'bed':
+                        addModel('bed-obj','bed-mtl','obj-modules/bed/bed.obj','obj-modules/bed/bed.mtl',obj.position);
+                        console.log('bed success');
+                        break;
+                    case 'chair':
+                        addModel('chair-obj','chair-mtl','obj-modules/chair/chair.obj','obj-modules/chair/chair.mtl',obj.position);
+                        console.log('chair success');
+                        break;
+                    case 'elec':
+                        addModel('tv-obj','tv-mtl','obj-modules/tv/tv.obj','obj-modules/tv/tv.mtl',obj.position);
+                        console.log('新电视！！！！');
+                        break;
+                    case 'refrigerator':
+                        addModel('fridge-obj','fridge-mtl','obj-modules/fridge/fridge.obj','obj-modules/fridge/fridge.mtl',obj.position);
+                        console.log('新冰箱！！！！！！！');
+                        break;
+                    case 'airld':
+                        addModel('airld-obj','airld-mtl','obj-modules/airld/airld.obj','obj-modules/airld/airld.mtl',obj.position);
+                        console.log('新落地空调！！！！');
+                        break;
+                    case 'airbg':
+                        addModel('airbg-obj','airbg-mtl','obj-modules/airbg/airbg.obj','obj-modules/airbg/airbg.mtl',obj.position);
+                        console.log('新空调壁挂！！！！');
+                        break;
+                    case 'lamp':
+                        addModel('lamp-obj','lamp-mtl','obj-modules/lamp/lamp.obj','obj-modules/lamp/lamp.mtl',obj.position);
+                        console.log('新台灯！！！！！');
+                        break;
+
+
+                    default:break;
+
+                }
+            }
+
+        }
+
+        window.onload = function () {
+
+            document.querySelector('body').appendChild(scene);
+            scene.appendChild(asset);
+            scene.appendChild(sky);
+            scene.appendChild(camera);
+
+            for(var i=0;i<sessionStorage.length;i++){
+                var str=sessionStorage.key(i);
+                console.log(str+"  "+sessionStorage.getItem(str));
+            }
+
+//            buildBase();
+            addAllModel();
+//
+//            createWall(-2,2,2,2);
+//            createWall(5,5,-5,5);
+//            createWall(2,2,5,5);
+//            createWall(-2,2,-5,5);
+
+            //随便设置个地板
+            ground.setAttribute('id', 'ground');
+            ground.setAttribute('src', 'https://cdn.aframe.io/a-painter/images/floor.jpg');
+            ground.setAttribute('radius', 100);
+            ground.setAttribute('height', 1);
+
+            //随便加个床试试
+//            addModel('bed-obj', 'bed-mtl', 'https://cdn.glitch.com/53d621be-988d-48f1-b92d-41134d57ed96%2Fbed.obj?1503576879736', 'https://cdn.glitch.com/53d621be-988d-48f1-b92d-41134d57ed96%2Fbed.mtl?1503576877095');
+//            addModel('sofa-obj','sofa-mtl','obj-modules/sofa/sofa.obj','obj-modules/sofa/sofa.mtl');
+
+            scene.appendChild(ground);
+
+
+            console.log("I have been here");//测试
+        }
+    </script>
+
+</head>
+<body>
+
+</body>
+
+</html>

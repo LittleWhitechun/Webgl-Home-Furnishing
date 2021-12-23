@@ -1,0 +1,40 @@
+{
+  "filetype": "pagedata",
+  "operation": "wall-texture",
+  "content": {
+    "title": "更换墙纸",
+    "directory": "images/materials/",
+    "items": [
+      {
+        "chsname": "方格",
+        "filename": "wall_0.jpg",
+        "typename": "texture"
+      },
+      {
+        "chsname": "欧式",
+        "filename": "wall_1.jpg",
+        "typename": "texture"
+      },
+      {
+        "chsname": "童趣",
+        "filename": "wall_2.jpg",
+        "typename": "texture"
+      },
+      {
+        "chsname": "深灰",
+        "filename": "wall_3.jpg",
+        "typename": "texture"
+      },
+      {
+        "chsname": "木纹",
+        "filename": "wall_4.jpg",
+        "typename": "texture"
+      },
+      {
+        "chsname": "叶子",
+        "filename": "wall_5.jpg",
+        "typename": "texture"
+      }
+    ]
+  }
+}

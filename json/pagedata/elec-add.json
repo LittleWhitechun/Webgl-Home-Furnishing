@@ -1,0 +1,39 @@
+{
+  "filetype": "pagedata",
+  "operation": "obj-add",
+  "content": {
+    "title": "添加电器模型",
+    "instruction": "点选下面列表中的家具，在场景中寻找一个平面作为支撑面，在确定的位置点击鼠标左键即可完成添加。",
+    "imgdir": "obj-modules/images/",
+    "items": [
+      {
+        "chsname": "电视",
+        "typename": "elec",
+        "path": "obj-modules/tv/",
+        "filename": "tv",
+        "supportingface": "floor"
+      },
+      {
+        "chsname": "空调（壁挂）",
+        "typename": "airbg",
+        "path": "obj-modules/airbg/",
+        "filename": "airbg",
+        "supportingface": "wall"
+      },
+      {
+        "chsname": "空调（落地）",
+        "typename": "airld",
+        "path": "obj-modules/airld/",
+        "filename": "airld",
+        "supportingface": "floor"
+      },
+      {
+        "chsname": "冰箱",
+        "typename": "refrigerator",
+        "path": "obj-modules/fridge/",
+        "filename": "fridge",
+        "supportingface": "floor"
+      }
+    ]
+  }
+}

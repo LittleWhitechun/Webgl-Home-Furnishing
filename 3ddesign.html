@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>3D-Design</title>
+        <script type="text/javascript" src="third-party/jquery/jquery.js"></script>
+        <script type="text/javascript" src="third-party/three.js/three.js"></script>
+        <script type="text/javascript" src="third-party/three.js/OBJLoader.js"></script>
+        <script type="text/javascript" src="third-party/three.js/MTLLoader.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="mycss/3ddesign.css">
+        <link rel="stylesheet" href="css/buttons.css">
+        <style type="text/css">
+            body{
+                background-image:url(index_img.jpg);
+                background-size:cover;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="page" style="width: 1500px">
+            <div class="container">
+
+                <nav class="navbar navbar-fixed-top navbar-inverse" id="nav">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#" style="margin-right: 10px">3D-DESIGN</a>
+                        </div>
+                        <div class="nav navbar-nav" id="nav_button">
+                            <li><a href="index.html">BACK</a></li>
+                        </div>
+                        <p class="nav-text">
+                            转换视角(C)··调整物体大小(滚轮上下)··删除物体(delete)··开始/暂停旋转(P)··移动视角(方向键)
+                        </p>
+                    </div>
+                </nav>
+
+                <div class="button-group" id="button-group">
+                    <button type="button" class="button button-primary" id="obj">家具</button>
+                    <button type="button" class="button button-primary" id="elec">电器</button>
+                    <button type="button" class="button button-primary" id="lamp">灯具</button>
+                    <button type="button" class="button button-primary" id="sp">墙饰</button>
+                </div>
+
+                <div class="panel panel-info" id="left_panel" style="overflow-y:scroll">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" id="leftctitle">家具信息面板</h3>
+                    </div>
+                    <div class="panel-body" id="left_panel_body">
+                        <div id="leftcinst"></div>
+                        <ul id="leftclist" class="choice-list">
+                            <li>
+                                <!-- TODO: 在这里为每一种元素添加图标 -->
+                                <p>{{item.name}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <canvas id="canvas"></canvas>
+                <a href="vr.html" class="button button-raised button-primary button-pill" id="next">进入VR页面</a>
+                <a href="#" class="button button-highlight" data-toggle="modal" data-target="#myModal" id="help_button"
+                   >Help</a>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    &times;
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">
+                                    使用帮助
+                                </h4>
+                            </div>
+                            <div class="modal-body">
+                                点击“进入3D设计界面”可开始设计<br><br>
+                                本网站可使您先通过平面设计进行户型的大体操作，然后进入3D设计界面进行3D视角的观察以及家具、纹理的设计<br><br>
+                                把家具放到对应的支撑面上之后，可以通过点击相应家具，在右侧的面板上进行材质，大小等参数的调整<br><br>
+                                选中物体后会有变色显示，把鼠标放到家具上即可进行导航栏所提示的放大缩小等操作<br><br>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-info" id="right_panel" style="overflow-y:scroll">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" id="rightctitle">家具信息面板</h3>
+                    </div>
+                    <div class="panel-body" id="right_panel_body">
+                        <div id="rightcinst"></div>
+                        <ul id="rightclist" class="choice-list">
+                            <p>选中家具或地板墙壁后，此处将会显示您所选中物体的参数，您可以通过设置这些参数改变家居的大小颜色等</p>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="debug_text">调试输出</div>
+                <div id="popup_text">弹出提示</div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="myjs/3ddesign.js"></script>
+</html>

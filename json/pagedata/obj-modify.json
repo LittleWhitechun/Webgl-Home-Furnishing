@@ -1,0 +1,29 @@
+{
+  "filetype": "pagedata",
+  "operation": "set-parameter",
+  "content": {
+    "title": "家具的相关设置",
+    "items": [
+      {
+        "chsname": "离地高度",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": -100,
+        "max": 100,
+        "step": 0.1,
+        "precision": 2,
+        "varible": "SELECTED_FOR_SETTING.position.y"
+      },
+      {
+        "chsname": "水平面内旋转角度",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": 0,
+        "max": 3.15,
+        "step": 0.01,
+        "precision": 3,
+        "varible": "SELECTED_FOR_SETTING.rotation.y"
+      }
+    ]
+  }
+}

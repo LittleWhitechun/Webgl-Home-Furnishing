@@ -1,0 +1,49 @@
+{
+  "filetype": "pagedata",
+  "operation": "set-parameter",
+  "content": {
+    "title": "设置场景",
+    "items": [
+      {
+        "chsname": "房间高度",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": 1,
+        "max": 100,
+        "step": 0.01,
+        "precision": 3,
+        "varible": "room.height"
+      },
+      {
+        "chsname": "门的高度",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": 1,
+        "max": 100,
+        "step": 0.01,
+        "precision": 3,
+        "varible": "room.doorTop"
+      },
+      {
+        "chsname": "窗户底边的离地高度",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": 1,
+        "max": 100,
+        "step": 0.01,
+        "precision": 3,
+        "varible": "room.windowBottom"
+      },
+      {
+        "chsname": "窗户顶边的离地高度",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": 1,
+        "max": 100,
+        "step": 0.01,
+        "precision": 3,
+        "varible": "room.windowTop"
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "filetype": "pagedata",
+  "operation": "surfaceplane-add",
+  "content": {
+    "title": "添加挂饰",
+    "instruction": "点选下面列表中的挂饰，在场景中寻找一个墙面作为支撑面，在确定的位置点击鼠标左键即可完成添加。",
+    "items": [
+      {
+        "chsname": "装饰画 1",
+        "typename": "surfaceplane",
+        "path": "images/picture/",
+        "filename": "pic1.jpg",
+        "supportingface": "wall"
+      },
+      {
+        "chsname": "装饰画 2",
+        "typename": "surfaceplane",
+        "path": "images/picture/",
+        "filename": "pic2.jpg",
+        "supportingface": "wall"
+      },
+      {
+        "chsname": "装饰画 3",
+        "typename": "surfaceplane",
+        "path": "images/picture/",
+        "filename": "pic3.jpg",
+        "supportingface": "wall"
+      },
+      {
+        "chsname": "装饰画 4",
+        "typename": "surfaceplane",
+        "path": "images/picture/",
+        "filename": "pic4.jpg",
+        "supportingface": "wall"
+      },
+      {
+        "chsname": "装饰画 5",
+        "typename": "surfaceplane",
+        "path": "images/picture/",
+        "filename": "pic5.jpg",
+        "supportingface": "wall"
+      },
+      {
+        "chsname": "装饰画 6",
+        "typename": "surfaceplane",
+        "path": "images/picture/",
+        "filename": "pic6.jpg",
+        "supportingface": "wall"
+      },
+      {
+        "chsname": "装饰画 7",
+        "typename": "surfaceplane",
+        "path": "images/picture/",
+        "filename": "pic7.jpg",
+        "supportingface": "wall"
+      },
+      {
+        "chsname": "装饰画 8",
+        "typename": "surfaceplane",
+        "path": "images/picture/",
+        "filename": "pic8.jpg",
+        "supportingface": "wall"
+      }
+    ]
+  }
+}

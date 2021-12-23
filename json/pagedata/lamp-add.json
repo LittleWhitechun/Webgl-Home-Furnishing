@@ -1,0 +1,26 @@
+{
+  "filetype": "pagedata",
+  "operation": "obj-add",
+  "content": {
+    "title": "添加电器模型",
+    "instruction": "点选下面列表中的家具，在场景中寻找一个平面作为支撑面，在确定的位置点击鼠标左键即可完成添加。",
+    "imgdir": "obj-modules/images/",
+    "items": [
+
+      {
+        "chsname": "台灯",
+        "typename": "lamp",
+        "path": "obj-modules/lamp/",
+        "filename": "lamp",
+        "supportingface": "floor"
+      },
+      {
+        "chsname": "吸顶灯",
+        "typename": "electirc",
+        "path": "obj-modules/bubble/",
+        "filename": "bubble",
+        "supportingface": "floor"
+      }
+    ]
+  }
+}

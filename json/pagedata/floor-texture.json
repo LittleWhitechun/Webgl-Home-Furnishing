@@ -1,0 +1,35 @@
+{
+  "filetype": "pagedata",
+  "operation": "window-texture",
+  "content": {
+    "title": "更换窗户的样式",
+    "directory": "images/materials/",
+    "items": [
+      {
+        "chsname": "方块条形",
+        "typename": "texture",
+        "filename": "floor_0.jpg"
+      },
+      {
+        "chsname": "十字花",
+        "typename": "texture",
+        "filename": "floor_1.jpg"
+      },
+      {
+        "chsname": "方块石板路",
+        "typename": "texture",
+        "filename": "floor_2.jpg"
+      },
+      {
+        "chsname": "球石堆砌",
+        "typename": "texture",
+        "filename": "floor_3.jpg"
+      },
+      {
+        "chsname": "随意青色",
+        "typename": "texture",
+        "filename": "floor_4.jpg"
+      }
+    ]
+  }
+}

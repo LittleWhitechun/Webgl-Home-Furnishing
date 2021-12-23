@@ -1,0 +1,104 @@
+#page{
+    padding-left: 65px;
+    padding-top: 45px;
+    padding-right: 1px;
+    margin: 0px;
+}
+
+.panel-warning {
+    top: 10px;
+    margin-left: 10px;
+    width: 280px;
+    height: 700px;
+    float: left;
+}
+
+.panel-body img {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.roomType img {
+    width: 85px;
+    height: 85px;
+    margin-top: 15px;
+    margin-left: 25px;
+}
+
+.panel-body img:hover {
+    border: solid #6BCDDA 2px;
+    cursor: pointer;
+}
+
+.skin {
+	background-color:white;
+    width: 100px;
+    border: 1px solid gray;
+    padding: 2px;
+    visibility: hidden;
+    position: absolute;
+}
+
+div.items {
+    margin: 1px 0;
+}
+
+div.items a {
+    text-decoration: none;
+}
+
+div.items:hover {
+    background-color: #c0c0c0;
+    cursor: default;
+}
+
+#canvasId {
+    float: right;
+    border: 3px solid #C2C2C2;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+#tip4length {
+    float: left;
+    margin-top: 10px;
+    width: 130px;
+    height: auto;
+}
+
+#board {
+    width: 800px;
+    height: 500px;
+    float: left;
+    margin-left: 10px;
+}
+.panel-body{
+    font-size: 16px;
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    font-weight: bold;
+}
+
+#titleimg{
+    margin-top: 10px;
+    margin-left: 80px;
+}
+
+#next{
+    margin-left: 35px;
+    margin-top: 150px;
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+}
+
+#help{
+    margin-left: 35px;
+    margin-top: 25px;
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+}
+
+#backbtn{
+    margin-left: 35px;
+    margin-top: 25px;
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+}

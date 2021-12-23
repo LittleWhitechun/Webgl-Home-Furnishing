@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Plane Design</title>
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/buttons.css">
+	<style type="text/css">
+		body{
+			background-image:url(index_img.jpg);
+			background-size:cover;
+		}
+	</style>
+	<link rel="stylesheet" href="mycss/planedesign.css">
+</head>
+<body>
+<div id="page" style="width:1500px;height: 800px">
+
+    <div id="container">
+        <img src="titleimg.png" id="titleimg">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h3 class="panel-title">户型设计</h3>
+            </div>
+            <div class="panel-body">
+                <div class="draw">
+                    <p>点击选项后在右侧画布进行绘制</p>
+                    <img id="wallId"src="myimages/wall.png" class="img-thumbnail" title="画墙">
+                    <img id="roomId"src="myimages/room.png" class="img-thumbnail" title="画房间">
+                    <img id="doorId"src="myimages/door.png" class="img-thumbnail"title="画门">
+                    <img id="windowId"src="myimages/window.png" class="img-thumbnail"title="画窗">
+                </div>
+                <hr>
+                <br>
+                <div class="roomType">
+                    <p>直接选择样板房</p>
+                    <img id="room_0"src="myimages/room_0.png" class="img-thumbnail"title="户型1">
+                    <img id="room_1"src="myimages/room_1.png" class="img-thumbnail"title="户型2">
+                    <img id="room_2"src="myimages/room_2.png" class="img-thumbnail"title="户型3">
+                    <img id="room_3"src="myimages/room_3.png" class="img-thumbnail"title="户型4">
+                    <img id="room_4"src="myimages/room_4.png" class="img-thumbnail"title="户型5">
+                    <img id="room_5"src="myimages/room_5.png" class="img-thumbnail"title="户型6">
+                </div>
+            </div>
+        </div>
+        <div id="board">
+            <canvas id='canvasId' class="canvas" width="800px" height="500px" style="background-color:white"></canvas>
+            <div id="menu" class="skin">
+                <div id="back" class="items">
+                    <a>后退</a>
+                </div>
+                <div id="redo" class="items">
+                    <a>重做</a>
+                </div>
+                <div id="finish" class="items">
+                    <a>完成</a>
+                </div>
+            </div>
+        </div>
+
+        <a href="3ddesign.html"  id="next" class="button button-raised button-caution">进入3D设计界面</a>
+        <br>
+        <a href="#"  id="help" class="button button-raised button-royal" data-toggle="modal" data-target="#myModal">帮助</a>
+        <br>
+        <a href="index.html"  id="backbtn" class="button button-raised button-highlight">返回</a>
+        <br>
+    </div>
+</div>
+
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">
+							使用帮助
+						</h4>
+					</div>
+					<div class="modal-body">
+						左侧选项选择要进行的平面设计操作。<br><br>
+						可在绘画面板上右键选择“后退”，“重做”，“完成”。<br><br>
+                        确认绘制完成后可点击进入3D设计面板，进行纹理和家具的设置。<br><br>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<script src="myjs/planedesign.js"></script>
+</body>
+</html>

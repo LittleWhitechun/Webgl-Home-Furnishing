@@ -1,0 +1,69 @@
+{
+  "filetype": "pagedata",
+  "operation": "set-parameter",
+  "content": {
+    "title": "绕轴旋转视角的相机",
+    "items": [
+      {
+        "chsname": "转轴X",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": -1000,
+        "max": 1000,
+        "step": 1,
+        "precision": 0,
+        "varible": "viewPos.x"
+      },
+      {
+        "chsname": "转轴Z",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": -1000,
+        "max": 1000,
+        "step": 1,
+        "precision": 0,
+        "varible": "viewPos.z"
+      },
+      {
+        "chsname": "旋转半径",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": 0,
+        "max": 100,
+        "step": 0.1,
+        "precision": 1,
+        "varible": "cameraParameter.spin.radius"
+      },
+      {
+        "chsname": "高度",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": 0,
+        "max": 1000,
+        "step": 0.1,
+        "precision": 1,
+        "varible": "cameraParameter.spin.height"
+      },
+      {
+        "chsname": "速度",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": 0,
+        "max": 0.02,
+        "step": 0.0004,
+        "precision": 4,
+        "varible": "cameraParameter.spin.speed"
+      },
+      {
+        "chsname": "画面中心点的高度",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": 0,
+        "max": 30,
+        "step": 0.1,
+        "precision": 2,
+        "varible": "cameraParameter.spin.lookAtHeight"
+      }
+    ]
+  }
+}

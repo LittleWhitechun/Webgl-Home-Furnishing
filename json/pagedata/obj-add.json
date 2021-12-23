@@ -1,0 +1,39 @@
+{
+  "filetype": "pagedata",
+  "operation": "obj-add",
+  "content": {
+    "title": "添加家具模型",
+    "instruction": "点选下面列表中的家具，在场景中寻找一个平面作为支撑面，在确定的位置点击鼠标左键即可完成添加。",
+    "imgdir": "obj-modules/images/",
+    "items": [
+      {
+        "chsname": "茶几",
+        "typename": "desk",
+        "path": "obj-modules/desk/",
+        "filename": "desk",
+        "supportingface": "floor"
+      },
+      {
+        "chsname": "懒人沙发",
+        "typename": "sofa",
+        "path": "obj-modules/sofa/",
+        "filename": "sofa",
+        "supportingface": "floor"
+      },
+      {
+        "chsname": "双人床",
+        "typename": "bed",
+        "path": "obj-modules/bed/",
+        "filename": "bed",
+        "supportingface": "floor"
+      },
+      {
+        "chsname": "椅子",
+        "typename": "chair",
+        "path": "obj-modules/chair/",
+        "filename": "chair",
+        "supportingface": "floor"
+      }
+    ]
+  }
+}

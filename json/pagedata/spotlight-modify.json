@@ -1,0 +1,92 @@
+{
+    "filetype": "pagedata",
+    "operation": "set-parameter",
+    "content": {
+        "title": "设置聚光灯光源",
+        "instruction": "需要先在左侧窗口选择一个聚光灯光源，然后可以在这里调节光源的各种参数",
+        "items": [
+            {
+                "chsname": "光照强度",
+                "typename": "configuration",
+                "datatype": "number",
+                "min": 0,
+                "max": 3,
+                "step": 0.01,
+                "precision": 2,
+                "varible": "SELECTED_FOR_SETTING.intensity"
+            },
+            {
+                "chsname": "光照角度",
+                "typename": "configuration",
+                "datatype": "number",
+                "min": 0,
+                "max": 1.57,
+                "step": 0.01,
+                "precision": 2,
+                "varible": "SELECTED_FOR_SETTING.angle"
+            },
+            {
+                "chsname": "有效光照距离",
+                "typename": "configuration",
+                "datatype": "number",
+                "min": 0,
+                "max": 20,
+                "step": 0.01,
+                "precision": 2,
+                "varible": "SELECTED_FOR_SETTING.distance"
+            },
+            {
+                "chsname": "红色分量",
+                "typename": "configuration",
+                "datatype": "number",
+                "min": 0,
+                "max": 1,
+                "step": 0.01,
+                "precision": 0,
+                "varible": "SELECTED_FOR_SETTING.color.r"
+            },
+            {
+                "chsname": "绿色分量",
+                "typename": "configuration",
+                "datatype": "number",
+                "min": 0,
+                "max": 1,
+                "step": 0.01,
+                "precision": 0,
+                "varible": "SELECTED_FOR_SETTING.color.g"
+            },
+            {
+                "chsname": "蓝色分量",
+                "typename": "configuration",
+                "datatype": "number",
+                "min": 0,
+                "max": 1,
+                "step": 0.01,
+                "precision": 0,
+                "varible": "SELECTED_FOR_SETTING.color.b"
+            },
+            {
+                "chsname": "光照方向X",
+                "typename": "configuration",
+                "datatype": "number",
+                "min": -10,
+                "max": 10,
+                "step": 0.01,
+                "precision": 2,
+                "varible": "SELECTED_FOR_SETTING.targetPosition.x",
+                "callback": "updateSpotLight()"
+            },
+            {
+                "chsname": "光照方向Z",
+                "typename": "configuration",
+                "datatype": "number",
+                "min": -10,
+                "max": 10,
+                "step": 0.01,
+                "precision": 2,
+                "varible": "SELECTED_FOR_SETTING.targetPosition.z",
+                "callback": "updateSpotLight()"
+            }
+        ]
+    }
+}

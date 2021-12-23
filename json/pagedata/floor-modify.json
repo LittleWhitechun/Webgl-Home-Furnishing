@@ -1,0 +1,70 @@
+{
+  "filetype": "pagedata",
+  "operation": "set-parameter",
+  "content": {
+    "title": "设置地板的属性",
+    "instruction": "设置地板表面的颜色：调节下列红绿蓝三个参数，混合得到的颜色将会立即应用到选择的那块地板上。设置地板的纹理图片重复次数：相当于在两个方向铺设地板砖的数量。",
+    "items": [
+      {
+        "chsname": "更改地板砖类型",
+        "typename": "button",
+        "callback": "loadUpdatePlaneByTexture('floor')"
+      },
+      {
+        "chsname": "地板重复的次数 1",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": 0.001,
+        "max": 4,
+        "step": 0.02,
+        "precision": 3,
+        "varible": "SELECTED_FOR_SETTING.imageRepeatX",
+        "callback": "updatePlaneByTexture()"
+      },
+      {
+        "chsname": "地板重复的次数 2",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": 0.001,
+        "max": 4,
+        "step": 0.02,
+        "precision": 3,
+        "varible": "SELECTED_FOR_SETTING.imageRepeatY",
+        "callback": "updatePlaneByTexture()"
+      },
+      {
+        "chsname": "地板表面 - 红色成分",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "precision": 0,
+        "varible": "SELECTED_FOR_SETTING.hexColor.r",
+        "callback": "updatePlaneByColor()"
+      },
+      {
+        "chsname": "地板表面 - 绿色成分",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "precision": 0,
+        "varible": "SELECTED_FOR_SETTING.hexColor.g",
+        "callback": "updatePlaneByColor()"
+      },
+      {
+        "chsname": "地板表面 - 蓝色成分",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "precision": 0,
+        "varible": "SELECTED_FOR_SETTING.hexColor.b",
+        "callback": "updatePlaneByColor()"
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "filetype": "pagedata",
+  "operation": "window-texture",
+  "content": {
+    "title": "更换窗户的样式",
+    "directory": "images/window/",
+    "items": [
+      {
+        "chsname": "窗样式 1",
+        "typename": "texture",
+        "filename": "win1.JPG",
+        "callback": "updateSurfacePlaneByTexture()"
+      },
+      {
+        "chsname": "窗样式 2",
+        "typename": "texture",
+        "filename": "win2.JPG",
+        "callback": "updateSurfacePlaneByTexture()"
+      },
+      {
+        "chsname": "窗样式 3",
+        "typename": "texture",
+        "filename": "win3.JPG",
+        "callback": "updateSurfacePlaneByTexture()"
+      },
+      {
+        "chsname": "窗样式 4",
+        "typename": "texture",
+        "filename": "win4.JPG",
+        "callback": "updateSurfacePlaneByTexture()"
+      },
+      {
+        "chsname": "窗样式 5",
+        "typename": "texture",
+        "filename": "win5.JPG",
+        "callback": "updateSurfacePlaneByTexture()"
+      },
+      {
+        "chsname": "窗样式 6",
+        "typename": "texture",
+        "filename": "win6.JPG",
+        "callback": "updateSurfacePlaneByTexture()"
+      }
+    ]
+  }
+}

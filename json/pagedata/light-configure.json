@@ -1,0 +1,42 @@
+{
+  "filetype": "pagedata",
+  "operation": "set-parameter",
+  "content": {
+    "title": "环境光和方向光",
+    "items": [
+      {
+        "chsname": "环境光 - 光照强度",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": 0,
+        "max": 3,
+        "step": 0.01,
+        "precision": 2,
+        "varible": "ambientLightParameter.intensity",
+        "callback": "updateAmbientLight()"
+      },
+      {
+        "chsname": "方向光 - 光照强度",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": 0,
+        "max": 3,
+        "step": 0.01,
+        "precision": 2,
+        "varible": "directionalLightParameter.intensity",
+        "callback": "updataDirectionalLight()"
+      },
+      {
+        "chsname": "方向光 - 发光点高度对于房间高度的倍数",
+        "typename": "configuration",
+        "datatype": "number",
+        "min": 0,
+        "max": 20,
+        "step": 0.01,
+        "precision": 2,
+        "varible": "directionalLightParameter.height_factor",
+        "callback": "updataDirectionalLight()"
+      }
+    ]
+  }
+}
